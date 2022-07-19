@@ -39,6 +39,31 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/ogarrett/CommunityWebsite/docs/',
+
+            /*
+            editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+          if (locale != 'en') {
+            return 'https://crowdin.com/project/ionic-docs';
+          }
+          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
+            return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
+          }
+          if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
+            return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
+              '-',
+              '/'
+            )}.ts`;
+          }
+          if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
+            return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
+          }
+          return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+        },*/
+
+
+
+
+
           breadcrumbs: true,
           routeBasePath: '/',
           // options for remark-admonitions
@@ -65,7 +90,7 @@ const config = {
         },
         items: [
           {
-            to: '/',
+            to: 'https://deepfence.io/community',
             label: 'Community',
           },
           {

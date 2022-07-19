@@ -57,6 +57,9 @@ pre code {
   padding-left: 8px;
 }
 
+a.navbar__link:hover {
+  color: var(--ifm-nav-color-active);
+}
 
 
 /* hide the toc */
@@ -66,6 +69,8 @@ pre code {
 .table-of-contents {
   display: none;
 }
+
+/* Style the sidebar */
 
 .theme-doc-sidebar-container {
   background-color: rgba(127,127,127,0.1);
@@ -80,6 +85,7 @@ pre code {
 }
 
 
+/* button behaviour */
 
 .deepfence-button {
   background-color: var(--ifm-color-button); 
@@ -100,8 +106,65 @@ pre code {
   color: var(--ifm-color-button-text-hover);
 }
 
+/* Edit this page (github) links.
+  The Hasura guys and girls are CSS gods! */
 
-/* Pagination Links at footer of page */
+a.theme-edit-this-page {
+  align-items: center;
+  display: flex;
+  height: 30px;
+  color: var(--ifm-color-primary-darkest) !important;
+}
+
+a.theme-edit-this-page svg {
+  display: none;
+}
+
+a.theme-edit-this-page:before, a.theme-edit-this-page:after {
+  content: "";
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform var(--ifm-transition-fast) linear;
+}
+a.theme-edit-this-page:before {
+  margin-right: 0.5rem;
+  background-color: var(--ifm-color-primary-darkest);
+  -webkit-mask-image: url("/icons/github.svg");
+  mask-image: url("/icons/github.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat; 
+
+  width: 24px;
+  height: 24px;
+}
+
+a.theme-edit-this-page:after {
+  margin-left: 0.25rem;
+/* https://stackoverflow.com/questions/13367868/how-to-modify-the-fill-color-of-an-svg-image-when-being-served-as-background-ima?noredirect=1&lq=1 */
+  background-color: var(--ifm-color-primary-darkest);
+  -webkit-mask-image: url("/icons/arrow_right.svg");
+  mask-image: url("/icons/arrow_right.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat; 
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: -0.25rem;
+}
+a.theme-edit-this-page:hover {
+  text-decoration: none;
+}
+a.theme-edit-this-page:hover:after {
+  transform: translateX(.25rem);
+}
+  
+
+
+
+
+
+
+
+/* Pagination Links at end of article */
 
 .pagination-nav__link {
   background-color: var(--ifm-color-button); 
@@ -126,7 +189,15 @@ pre code {
   color: var(--ifm-color-button-text-hover);
 }
 
-/* Informational cards */
+/* Footer Links at end of article */
+.footer a {
+  color: white;
+}
+.footer a:hover {
+  color: var(--ifm-nav-color-active);
+}
+
+  /* Informational cards */
 
 .card {
   background-color: rgba(127,127,127,0.1);
@@ -145,6 +216,7 @@ pre code {
   --ifm-color-primary-light: #20387c;
   --ifm-color-primary-lighter: #213b82;
   --ifm-color-primary-lightest: #264293;
+
   --ifm-code-font-size: 90%; /*95%;*/
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
@@ -159,28 +231,33 @@ pre code {
   /* var(--ifm-alert-background-color) - dark */
   --ifm-color-button-text-hover: rgb(25, 60, 71);
 
-
+  --ifm-nav-color-active: rgb(76, 179, 212);
 
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #16c7f5;
-  --ifm-color-primary-dark: #0ab9e6;
-  --ifm-color-primary-darker: #09afda;
-  --ifm-color-primary-darkest: #0890b3;
-  --ifm-color-primary-light: #30cdf6;
-  --ifm-color-primary-lighter: #3cd0f7;
-  --ifm-color-primary-lightest: #63d9f8;
+  --ifm-color-primary: #e44bed;
+  --ifm-color-primary-dark: #e02fea;
+  --ifm-color-primary-darker: #de20e9;
+  --ifm-color-primary-darkest: #bd14c7;
+  --ifm-color-primary-light: #e867f0;
+  --ifm-color-primary-lighter: #ea76f1;
+  --ifm-color-primary-lightest: #f1a0f6;
+
+  --ifm-code-font-size: 90%; /*95%;*/
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
   /* var(--ifm-alert-border-color) - light and dark */
-  --ifm-color-button: rgb(76, 179, 212);
+  --ifm-color-button: #891B9C;
 
   /* var(--ifm-alert-background-color) - dark */
-  --ifm-color-button-text: rgb(25, 60, 71);
-  --ifm-color-button-hover: rgb(25, 60, 71);
+  --ifm-color-button-text: rgb(238, 249, 253);
+  --ifm-color-button-hover: #e867f0;
 
   /* var(--ifm-alert-background-color) - light */
-  --ifm-color-button-text-hover: rgb(238, 249, 253);
+  --ifm-color-button-text-hover: rgb(25, 60, 71);
+
+  --ifm-nav-color-active: #e867f0;
+
 }
