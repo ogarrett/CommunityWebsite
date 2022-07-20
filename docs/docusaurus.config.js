@@ -6,13 +6,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Welcome to the Deepfence Community',
+  title: 'Deepfence Documentation',
   tagline: 'Security Observability for Cloud Native Applications',
-  url: 'https://docs.deepfence.io',
+  url: 'https://docs.oweng.io',
   baseUrl: '/',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
   favicon: '/img/deepfence.png',
 
   // GitHub pages deployment config.
@@ -35,34 +35,25 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/ogarrett/CommunityWebsite/docs/',
+          
+          editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+            const repo = {
+              threatmapper:   'https://github.com/deepfence/ThreatMapper',
+              threatstryker:  'https://github.com/deepfence/ThreatStryker-docs',
+              secretscanner:  'https://github.com/deepfence/SecretScanner',
+              packetstreamer: 'https://github.com/deepfence/PacketStreamer',
+              flowmeter:      'https://github.com/deepfence/FlowMeter',
+              yaradare:       'https://github.com/deepfence/YaRadare'
+            };
 
-            /*
-            editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-          if (locale != 'en') {
-            return 'https://crowdin.com/project/ionic-docs';
-          }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
-          }
-          if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
-              '-',
-              '/'
-            )}.ts`;
-          }
-          if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
-          }
-          return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
-        },*/
-
-
-
-
+            if(( match = docPath.match( /([^\/]*)\/(.*).md/ )) != null ) {
+              product  = match[1];
+              filepath = match[2];
+              if( repo[product] != null ) {
+                return `${repo[product]}/edit/main/docs/docs/${product}/${filepath}.md`;
+              }
+            }
+          },
 
           breadcrumbs: true,
           routeBasePath: '/',
@@ -73,6 +64,10 @@ const config = {
         theme: {
           customCss: require.resolve('./static/css/deepfence.css'),
         },
+        googleAnalytics: {
+          trackingID: 'UA-74324220-2',
+          anonymizeIP: false,
+        },
       }),
     ],
   ],
@@ -80,6 +75,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{name: 'keywords', content: 'security, secops, devsecops, appsec, threat, vulnerability, CVE'}],
       navbar: {
         hideOnScroll: false,
         title: '',

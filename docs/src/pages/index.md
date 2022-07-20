@@ -1,6 +1,9 @@
 ---
-title: Deepfence Community
+title: Deepfence Documentation
 slug: /
+image: /img/social/deepfence.jpg
+keywords: [deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yaradare,security,secops,devsecops,appsec]
+hide_table_of_contents: true
 ---
 
 

@@ -18,12 +18,12 @@ run:
 
 docs:
 	@echo Importing docs to ./docs
-	./import.pl ../product-docs/ThreatMapper/docs/docs/threatmapper docs/threatmapper --gh-link https://github.com/deepfence/ThreatMapper/edit/main/docs
-	./import.pl ../product-docs/ThreatStryker-docs/docs/docs/threatstryker docs/threatstryker --gh-link https://github.com/deepfence/ThreatStryker-docs/edit/main/docs
-	./import.pl ../product-docs/SecretScanner/docs/docs/secretscanner docs/secretscanner --gh-link https://github.com/deepfence/SecretScanner/edit/main/docs
-	./import.pl ../product-docs/PacketStreamer/docs/docs/packetstreamer docs/packetstreamer --gh-link https://github.com/deepfence/PacketStreamer/edit/main/docs
-	./import.pl ../product-docs/FlowMeter/docs/docs/flowmeter docs/flowmeter --gh-link https://github.com/deepfence/FlowMeter/edit/main/docs
-	./import.pl ../product-docs/YaRadare/docs/docs/yaradare docs/yaradare --gh-link https://github.com/deepfence/YaRadare/edit/main/docs
+	./import.pl threatmapper   --from ../product-docs/ThreatMapper/docs/docs --to docs
+	./import.pl threatstryker  --from ../product-docs/ThreatStryker-docs/docs/docs --to docs
+	./import.pl secretscanner  --from ../product-docs/SecretScanner/docs/docs --to docs
+	./import.pl packetstreamer --from ../product-docs/PacketStreamer/docs/docs --to docs
+	./import.pl flowmeter      --from ../product-docs/FlowMeter/docs/docs --to docs
+	./import.pl yaradare       --from ../product-docs/YaRadare/docs/docs --to docs
 
 
 sidebars: 
@@ -36,6 +36,7 @@ sidebars:
 	cp ../product-docs/YaRadare/docs/sidebars.js           sidebars/yaradare.js
 
 pull:
+	@echo Updating product repos
 	git submodule update --remote
 
 clean:

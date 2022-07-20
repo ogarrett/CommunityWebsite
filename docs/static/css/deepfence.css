@@ -63,12 +63,12 @@ a.navbar__link:hover {
 
 
 /* hide the toc */
-.theme-doc-toc-desktop {
+/*.theme-doc-toc-desktop {
   display: none;
 }
 .table-of-contents {
   display: none;
-}
+}*/
 
 /* Style the sidebar */
 
@@ -129,8 +129,8 @@ a.theme-edit-this-page:before, a.theme-edit-this-page:after {
 a.theme-edit-this-page:before {
   margin-right: 0.5rem;
   background-color: var(--ifm-color-primary-darkest);
-  -webkit-mask-image: url("/icons/github.svg");
-  mask-image: url("/icons/github.svg");
+  -webkit-mask-image: url("/img/github.svg");
+  mask-image: url("/img/github.svg");
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat; 
 
@@ -142,8 +142,8 @@ a.theme-edit-this-page:after {
   margin-left: 0.25rem;
 /* https://stackoverflow.com/questions/13367868/how-to-modify-the-fill-color-of-an-svg-image-when-being-served-as-background-ima?noredirect=1&lq=1 */
   background-color: var(--ifm-color-primary-darkest);
-  -webkit-mask-image: url("/icons/arrow_right.svg");
-  mask-image: url("/icons/arrow_right.svg");
+  -webkit-mask-image: url("/img/arrow_right.svg");
+  mask-image: url("/img/arrow_right.svg");
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat; 
   width: 1rem;
@@ -154,7 +154,7 @@ a.theme-edit-this-page:hover {
   text-decoration: none;
 }
 a.theme-edit-this-page:hover:after {
-  transform: translateX(.25rem);
+  transform: translateX(.5rem);
 }
   
 
