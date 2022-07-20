@@ -48,7 +48,11 @@ pre code {
   background-color: var(--ifm-code-background) !important;
 }
 
-/* Navbar dropdown - for titles */
+/* Navbar */
+
+.navbar__item {
+  padding-top: 8px;  /* to align the base of the text with the base of the text in the logo */
+}
 
 .nav-dropdown-title {
   font-size: 0.9rem !important;
@@ -62,13 +66,31 @@ a.navbar__link:hover {
 }
 
 
-/* hide the toc */
-/*.theme-doc-toc-desktop {
+/* hide the toc, but leave the space 
+   For reference, can also suppress the toc completely with frontmatter hide_table_of_contents: true */
+.theme-doc-toc-desktop {
   display: none;
 }
 .table-of-contents {
   display: none;
-}*/
+}
+
+
+/* Style the announcement bar, using similar styles to the footer */
+
+div[role=banner] {
+  background-color: #303846 !important;
+  color: white;
+}
+div[role=banner] a:hover {
+  color: var(--ifm-nav-color-active);
+}
+div[role=banner] button {
+  color: var(--ifm-nav-color-active);
+  border: 0;
+  opacity: 1;
+}
+
 
 /* Style the sidebar */
 
@@ -259,5 +281,129 @@ a.theme-edit-this-page:hover:after {
   --ifm-color-button-text-hover: rgb(25, 60, 71);
 
   --ifm-nav-color-active: #e867f0;
+}
 
+
+
+
+
+
+.homepage-content {
+  padding-bottom: 6rem;
+}
+
+#hero {
+  padding: 2rem 0 1.5rem 0;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--docs-color-border);
+}
+
+#hero h2 {
+  font-size: 36px;
+}
+
+#hero p {
+  color: var(--docs-color-text-100);
+}
+
+.section-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.two-cols .section-content {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.has-sub-sections > h3 {
+  margin-bottom: 1.5rem;
+}
+
+.has-sub-sections > .section-content {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.has-sub-sections > .section-content > .homepage-section {
+  margin-bottom: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.homepage-section {
+  margin-bottom: 3rem;
+}
+
+.homepage-section h3 {
+  font-weight: 600;
+}
+
+.section-description {
+  color: var(--docs-color-text-100);
+  margin: 0rem 0 1.25rem 0;
+  margin-top: -0.5rem;
+}
+
+.has-sub-sections > .section-content .section-description {
+  font-size: 14px;
+}
+
+.homepage-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: var(--docs-color-text);
+
+  --ifm-link-hover-decoration: none;
+  --ifm-link-hover-color: inherit;
+  cursor: pointer;
+
+  transition-property: background-color, color;
+
+  border: 1px solid var(--docs-color-border);
+  border-radius: 8px;
+}
+
+.homepage-card:hover {
+  background-color: var(--docs-color-background-100);
+}
+
+.icon svg {
+  width: auto;
+  height: 100%;
+}
+
+.homepage-card .icon {
+  width: 48px;
+  height: 48px;
+  /* background-color: #262626;
+  border-radius: 8px; */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-content .title {
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+}
+
+.card-content .description {
+  font-size: 14px;
+  color: var(--docs-color-text-100);
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+  .section-content {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .two-cols .section-content {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }

@@ -75,7 +75,20 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{name: 'keywords', content: 'security, secops, devsecops, appsec, threat, vulnerability, CVE'}],
+      /* Note that markdown documents outside of the docs tree are not processed for frontmatter metadata 
+         Additionally, metadata is only applied in full client builds of the site */
+      metadata: [
+        { name: 'keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yaradare,security,secops,devsecops,appsec' },
+        { property: 'og:keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yaradare,security,secops,devsecops,appsec' },
+        { name: 'image', content: 'https://docs.oweng.io/img/social/deepfence.jpg' },
+        { property: 'og:image', content: 'https://docs.oweng.io/img/social/deepfence.jpg' }
+      ],
+      announcementBar: {
+        id: 'support_threatmapper',
+        content:
+          '⭐️ If you like ThreatMapper, please <a href="https://github.com/deepfence/ThreatMapper" target="_blank">star ThreatMapper on GitHub</a> ⭐️',
+        isCloseable: false
+      },
       navbar: {
         hideOnScroll: false,
         title: '',

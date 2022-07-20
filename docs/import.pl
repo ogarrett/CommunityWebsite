@@ -118,7 +118,7 @@ sub processMarkdown( $$ ) {
   # 
   push @frontmatter, "image: $image{$product}\n" if defined $image{$product};
   push @frontmatter, "keywords: $keywords{$product}\n" if defined $keywords{$product};
-  push @frontmatter, "hide_table_of_contents: true\n";
+  #push @frontmatter, "hide_table_of_contents: true\n";
 
   open OUT, ">$to" or die "Cannot open $to: $!";
   if( @frontmatter ) {
