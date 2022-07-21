@@ -8,6 +8,7 @@ import Layout from '@theme/Layout';
 import {
   HomepageCard as Card,
   HomepageSection as Section,
+  HomepageNormalCard as NormalCard,
 } from '../components/HomepageComponents';
 import {
   AngularIcon,
@@ -28,15 +29,15 @@ import GuidesSection from '../components/GuidesSection';
 Open-Source is at the core of what we do, trusted by 1,000's of community users. 
 
 <Section title="">
-  <Card
+  <NormalCard
     title="100% open source"
     description="Deepfence open source projects are completely open source. No phone-home, no limits on scans, no commercial upsell."
   />
-  <Card
+  <NormalCard
     title="900,000 Docker Pulls"
     description="Deepfence ThreatMapper is trusted by 1,000's of community users to find threats hidden in production platforms."
   />
-  <Card
+  <NormalCard
     title="4,923 GitHub Stars"
     description="Across multiple repos, Deepfence projects are amongst the fastest adopted security solutions for cloud-native apps."
   />
@@ -76,13 +77,13 @@ Open-Source is at the core of what we do, trusted by 1,000's of community users.
   />
 </Section>
 <Section title="Deepfence Enterprise Products" id="web-sdks">
-  <Card
+  <NormalCard
     title="ThreatStryker"
     description="Deepfence ThreatStryker observes, correlates, learns, and acts to protect your cloud-native applications, across clouds and on-prem locations."
     to="/threatstryker"
     icon={<UIKitIcon />}
   />
-  <Card
+  <NormalCard
     title="Deepfence Cloud"
     description="Deepfence Cloud is a self-service portal from which you can create an organization and invite users to that organization. You can then deploy ThreatStryker console instances in any of the available clouds. Deepfence Cloud users in your organization have access to these consoles and can log in directly without any additional credentials"
     to="/threatstryker/cloud"
@@ -107,8 +108,8 @@ Open-Source is at the core of what we do, trusted by 1,000's of community users.
 
 ## Learn More
 
- * YouTube
- * Blog
+ * [YouTube[(https://www.youtube.com/channel/UCklvbuOjnzpmtXy-g97tfWQ)
+ * [Blog](https://deepfence.io/blog/)
  * Webinars?
 
 ## Swag Raffle!
