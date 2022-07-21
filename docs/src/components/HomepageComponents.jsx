@@ -2,6 +2,7 @@ import React from 'react';
 import { paramCase } from 'param-case';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
+import GitHubButton from 'react-github-btn';
 
 export function HomepageSection({
   id,
@@ -27,7 +28,21 @@ export function HomepageSection({
   );
 }
 
-export function HomepageCard({ id, icon, title, description, to }) {
+export function HomepageCard({ id, icon, title, github, description, to }) {
+  return (
+    <Link to={to} className="homepage-card">
+      {icon && <div className="icon">{icon}</div>}
+      <div className="card-content">
+        <div className="title" id={id && paramCase(title)}>
+          {title}
+        </div>
+        <GitHubButton href={github} data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label={"Star" + github + "on GitHub"}>Star</GitHubButton>
+        <div className="description">{description}</div>
+      </div>
+    </Link>
+  );
+}
+export function HomepageNormalCard({ id, icon, title, description, to }) {
   return (
     <Link to={to} className="homepage-card">
       {icon && <div className="icon">{icon}</div>}
@@ -40,3 +55,4 @@ export function HomepageCard({ id, icon, title, description, to }) {
     </Link>
   );
 }
+
