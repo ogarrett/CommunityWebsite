@@ -108,7 +108,7 @@ Open-Source is at the core of what we do, trusted by 1,000's of community users.
 
 ## Learn More
 
- * [YouTube[(https://www.youtube.com/channel/UCklvbuOjnzpmtXy-g97tfWQ)
+ * [YouTube](https://www.youtube.com/channel/UCklvbuOjnzpmtXy-g97tfWQ)
  * [Blog](https://deepfence.io/blog/)
  * Webinars?
 
