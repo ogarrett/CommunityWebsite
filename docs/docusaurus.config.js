@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Deepfence Documentation',
+  title: 'Deepfence Community',
   tagline: 'Security Observability for Cloud Native Applications',
   url: 'https://docs.oweng.io',
   baseUrl: '/',
@@ -84,9 +84,9 @@ const config = {
         { property: 'og:image', content: 'https://docs.oweng.io/img/social/deepfence.jpg' }
       ],
       announcementBar: {
-        id: 'support_threatmapper',
+        id: 'support_threatmapper2',
         content:
-          '⭐️ If you like ThreatMapper, please <a href="https://github.com/deepfence/ThreatMapper" target="_blank">star ThreatMapper on GitHub</a> ⭐️',
+          '⭐️ If you like ThreatMapper, please <a href="https://github.com/deepfence/ThreatMapper" target="_blank">star it on GitHub</a> ⭐️',
         isCloseable: false
       },
       navbar: {

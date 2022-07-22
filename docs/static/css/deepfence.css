@@ -24,22 +24,22 @@
 }
 
 
-article header h1 {
+h1 {
 /*  font-size: 5rem !important;*/
-  font-family: "Noto Sans Display" !important;
+/*  font-family: "Noto Sans Display" !important;*/
 }
-article header h2 {
+h2 {
 /*  font-size: 5rem !important;*/
-  font-family: "Noto Sans Display" !important;
-  font-weight:  bold !important;
+/*  font-family: "Noto Sans Display" !important;*/
+/*  font-weight:  bold !important;*/
 }
 article header h3 {
 /*  font-size: 1.3rem !important;*/
-  font-family: "Noto Sans Display" !important;
+/*  font-family: "Noto Sans Display" !important;*/
 }
 article header h4 {
 /*  font-size: 1.1rem !important;*/
-  font-family: "Noto Sans Display" !important;
+/*  font-family: "Noto Sans Display" !important;*/
 }
 
 
@@ -228,16 +228,28 @@ a.theme-edit-this-page:hover:after {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px !important;
 }
 
+/* For reference, Deepfence palettes */
+:root {
+  --df-blue1: #16c7f3;
+  --df-blue2: #1f73b4;
+  --df-blue3: #1d3372;
+  --df-pink1: #e54ced;
+  --df-pink2: #8a199c;
+  --df-gray1: #67677f;
+  --df-gray2: #4f4f62;
+  --df-gray3: #353544;
+}
+
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #1d3371;
-  --ifm-color-primary-dark: #1a2e66;
-  --ifm-color-primary-darker: #192b60;
-  --ifm-color-primary-darkest: #14244f;
-  --ifm-color-primary-light: #20387c;
-  --ifm-color-primary-lighter: #213b82;
-  --ifm-color-primary-lightest: #264293;
+  --ifm-color-primary: #1d3372;
+  --ifm-color-primary-dark: #1a2e67;
+  --ifm-color-primary-darker: #192b61;
+  --ifm-color-primary-darkest: #142450;
+  --ifm-color-primary-light: #20387d;
+  --ifm-color-primary-lighter: #213b83;
+  --ifm-color-primary-lightest: #264294;
 
   --ifm-code-font-size: 90%; /*95%;*/
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
@@ -255,17 +267,23 @@ a.theme-edit-this-page:hover:after {
 
   --ifm-nav-color-active: rgb(76, 179, 212);
 
+  --ifm-homepage-card-title: #16c7f3;;
+
+  --ifm-hero-dark: #1d3372;
+  --ifm-hero-light: #1f73b4;
+
+  --ifm-productcard-bg: rgb( 128, 128, 128, 0 );
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #e44bed;
-  --ifm-color-primary-dark: #e02fea;
-  --ifm-color-primary-darker: #de20e9;
-  --ifm-color-primary-darkest: #bd14c7;
-  --ifm-color-primary-light: #e867f0;
-  --ifm-color-primary-lighter: #ea76f1;
-  --ifm-color-primary-lightest: #f1a0f6;
+  --ifm-color-primary: #e54ced;
+  --ifm-color-primary-dark: #e130ea;
+  --ifm-color-primary-darker: #df21e9;
+  --ifm-color-primary-darkest: #be14c7;
+  --ifm-color-primary-light: #e968f0;
+  --ifm-color-primary-lighter: #eb77f1;
+  --ifm-color-primary-lightest: #f1a1f6;
 
   --ifm-code-font-size: 90%; /*95%;*/
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
@@ -281,29 +299,33 @@ a.theme-edit-this-page:hover:after {
   --ifm-color-button-text-hover: rgb(25, 60, 71);
 
   --ifm-nav-color-active: #e867f0;
-}
 
+  --ifm-homepage-card-title: #e54ced;
 
+  --ifm-hero-dark: #021048;
+  --ifm-hero-light: #264294;
 
-
-
-
-.homepage-content {
-  padding-bottom: 6rem;
+  --ifm-productcard-bg: rgb( 128, 128, 128, 0.05 );
 }
 
 #hero {
-  padding: 2rem 0 1.5rem 0;
-  margin-bottom: 4rem;
-  border-bottom: 1px solid var(--docs-color-border);
+/*  background: linear-gradient(90deg, #021048, #1e38a3); */
+
+  background: linear-gradient(90deg, var(--ifm-hero-dark), var( --ifm-hero-light));
+
+  color: white !important;
+}
+.homepage-section {
+  margin-bottom: 3rem;
+}
+#hero .homepage-section {
+  margin-bottom: 0;
 }
 
-#hero h2 {
-  font-size: 36px;
-}
 
-#hero p {
-  color: var(--docs-color-text-100);
+.section-description {
+  margin: 0rem 0 1.25rem 0;
+  margin-top: -0.5rem;
 }
 
 .section-content {
@@ -316,88 +338,124 @@ a.theme-edit-this-page:hover:after {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.has-sub-sections > h3 {
-  margin-bottom: 1.5rem;
-}
 
-.has-sub-sections > .section-content {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-.has-sub-sections > .section-content > .homepage-section {
-  margin-bottom: 1rem;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.homepage-section {
-  margin-bottom: 3rem;
-}
-
-.homepage-section h3 {
-  font-weight: 600;
-}
-
-.section-description {
-  color: var(--docs-color-text-100);
-  margin: 0rem 0 1.25rem 0;
-  margin-top: -0.5rem;
-}
-
-.has-sub-sections > .section-content .section-description {
-  font-size: 14px;
-}
-
+/* Card types: card (parent) and homepage or product */
 .homepage-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 0.75rem;
-  text-decoration: none;
-  color: var(--docs-color-text);
-
-  --ifm-link-hover-decoration: none;
-  --ifm-link-hover-color: inherit;
-  cursor: pointer;
-
-  transition-property: background-color, color;
-
-  border: 1px solid var(--docs-color-border);
-  border-radius: 8px;
+  background: rgb( 128, 128, 128, 0.2 );
 }
 
-.homepage-card:hover {
-  background-color: var(--docs-color-background-100);
+.homepage-card .title {
+  color: var(--ifm-homepage-card-title);
 }
 
-.icon svg {
-  width: auto;
-  height: 100%;
+.product-card {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+  background: var(--ifm-productcard-bg);
+  position: relative;
 }
 
-.homepage-card .icon {
-  width: 48px;
-  height: 48px;
-  /* background-color: #262626;
-  border-radius: 8px; */
+.product-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
 }
+
+.product-card .title {
+  overflow: auto;
+  white-space: nowrap;
+}
+.product-card .title img {
+  vertical-align:middle;
+}
+.product-card .title .heading {
+  display: inline-block;
+}
+
+.product-card .description {
+  padding-bottom: 3.5rem !important;
+}
+
+.product-card .footnotes {
+  height: 3rem;
+  vertical-align: middle;
+  font-size: 14px;
+  position:absolute; bottom:0;
+  background: rgb( 128, 128, 128, 0.05 );
+  border-top: 1px solid rgb( 128, 128, 128, 0.2 );
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+}
+
+.product-card .footnotes div {
+  display: inline-block;
+}
+
+.ghstars:before {
+  content: "⭐️ ";
+}
+.ghstars {
+  padding-right: 1rem;
+}
+.ghlink:before {
+  content: "";
+  background: url(/img/github.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-right: 20px !important;
+  
+}
+.ghlink {
+  padding-right: 1rem;
+}
+.docs:before {
+  content: "📚 ";
+}
+.docs {
+  padding-right: 1rem;
+}
+.readmore:before {
+  content: "➡️ ";
+}
+.readmore {
+  padding-right: 1rem;
+}
+
+
+
 
 .card-content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: flex-start;
+  gap: 10px;
+
+  text-decoration: none;
 }
 
 .card-content .title {
+  padding: 0.75rem 0.75rem 0 0.75rem;
+}
+
+.card-content .heading {
   font-size: 16px;
   letter-spacing: -0.5px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .card-content .description {
   font-size: 14px;
-  color: var(--docs-color-text-100);
   line-height: 1.5;
+  padding: 0 0.75rem 0.75rem 0.75rem;
 }
+
+.card-content .icon {
+  width: 48px;
+  height: 48px;
+  padding-right: 8px;
+}
+
+
+
+
+
 
 @media screen and (max-width: 768px) {
   .section-content {
