@@ -95,7 +95,8 @@ div[role=banner] button {
 /* Style the sidebar */
 
 .theme-doc-sidebar-container {
-  background-color: rgba(127,127,127,0.1);
+/*  background-color: rgba(127,127,127,0.1);*/
+  background: linear-gradient(180deg, var(--ifm-hero-dark), var( --ifm-hero-light));
   font-family: "Noto Sans Display" !important;
   font-size: 0.9rem !important;
 }
@@ -104,6 +105,19 @@ div[role=banner] button {
   font-size: 1rem !important;
   padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
   border-bottom: 1px solid var(--ifm-color-primary-darkest);
+  color: white;
+}
+
+/* cards */
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+}
+
+.card:hover {
+  border: none !important;
+  transition: none !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
 }
 
 
@@ -219,14 +233,6 @@ a.theme-edit-this-page:hover:after {
   color: var(--ifm-nav-color-active);
 }
 
-  /* Informational cards */
-
-.card {
-  background-color: rgba(127,127,127,0.1);
-  border-radius: 6px;
-  transition-duration: 0.4s;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px !important;
-}
 
 /* For reference, Deepfence palettes */
 :root {
@@ -258,6 +264,11 @@ a.theme-edit-this-page:hover:after {
   /* var(--ifm-alert-border-color) - light and dark */
   --ifm-color-button: rgb(76, 179, 212);
 
+  /* Cards: styles after info alerts: --ifm-alert-background-color, etc */
+  --ifm-card-background-color: rgb(238, 249, 253);
+  --ifm-card-border-radius: 0rem;
+  --ifm-global-shadow-lw: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+
   /* var(--ifm-alert-background-color) - light */
   --ifm-color-button-text: rgb(238, 249, 253);
   --ifm-color-button-hover: rgb(238, 249, 253);
@@ -267,12 +278,20 @@ a.theme-edit-this-page:hover:after {
 
   --ifm-nav-color-active: rgb(76, 179, 212);
 
-  --ifm-homepage-card-title: #16c7f3;;
+  --ifm-homepage-card-title: #16c7f3;
 
   --ifm-hero-dark: #1d3372;
   --ifm-hero-light: #1f73b4;
 
   --ifm-productcard-bg: rgb( 128, 128, 128, 0 );
+
+  --ifm-menu-color-background-active: rgb( 128, 128, 128, 0.2 );
+  --ifm-menu-color: rgb(238, 249, 253) !important;
+  --ifm-menu-color-active: #16c7f3;
+  --ifm-toc-border-color: #67677f !important;
+
+  --ifm-menu-link-sublist-icon-filter: invert(75%) !important;
+
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -291,6 +310,12 @@ a.theme-edit-this-page:hover:after {
   /* var(--ifm-alert-border-color) - light and dark */
   --ifm-color-button: #891B9C;
 
+  /* Cards: styles after info alerts: --ifm-alert-background-color, etc */
+  --ifm-card-background-color: rgb(25, 60, 71);
+  --ifm-card-border-radius: 0;
+  --ifm-global-shadow-lw: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+
+
   /* var(--ifm-alert-background-color) - dark */
   --ifm-color-button-text: rgb(238, 249, 253);
   --ifm-color-button-hover: #e867f0;
@@ -306,6 +331,14 @@ a.theme-edit-this-page:hover:after {
   --ifm-hero-light: #264294;
 
   --ifm-productcard-bg: rgb( 128, 128, 128, 0.05 );
+
+  --ifm-menu-color-background-active: rgb( 128, 128, 128, 0.2 );
+  --ifm-menu-color: rgb(238, 249, 253) !important;
+  --ifm-menu-color-active: #e867f0;
+
+  --ifm-toc-border-color: #353544 !important;
+
+  --ifm-menu-link-sublist-icon-filter: invert(75%) !important;
 }
 
 #hero {
