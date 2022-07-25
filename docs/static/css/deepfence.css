@@ -373,7 +373,7 @@ a.theme-edit-this-page:hover:after {
 
 
 /* Card types: card (parent) and homepage or product */
-.homepage-card {
+#hero .homepage-card {
   background: rgb( 128, 128, 128, 0.2 );
 }
 
@@ -421,13 +421,13 @@ a.theme-edit-this-page:hover:after {
   display: inline-block;
 }
 
-.ghstars:before {
+.product-card .footnotes .ghstars:before {
   content: "⭐️ ";
 }
-.ghstars {
+.product-card .footnotes .ghstars {
   padding-right: 1rem;
 }
-.ghlink:before {
+.product-card .footnotes .ghlink:before {
   content: "";
   background: url(/img/github.svg);
   background-size: contain;
@@ -435,24 +435,71 @@ a.theme-edit-this-page:hover:after {
   padding-right: 20px !important;
   
 }
-.ghlink {
+.product-card .footnotes .ghlink {
   padding-right: 1rem;
 }
-.docs:before {
+.product-card .footnotes .docs:before {
   content: "📚 ";
 }
-.docs {
+.product-card .footnotes .docs {
   padding-right: 1rem;
 }
-.readmore:before {
+.product-card .footnotes .readmore:before {
   content: "➡️ ";
 }
-.readmore {
+.product-card .footnotes .readmore {
   padding-right: 1rem;
 }
 
+.social-card {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row !important;
+  gap: 0 !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.social-card a {
+  display: inline;
+  vertical-align: middle;
+  text-decoration: none;
 
+}
+
+.social-card img {
+  height: 6rem;
+  padding: 0.5rem;
+  vertical-align: middle;
+  transition: transform .2s;
+}
+.social-card img:hover {
+  transform: scale(1.1);
+}
+
+.social-card .swagcontainer {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+  padding: 0 0.5rem;
+  transition: transform .2s;
+}
+
+.social-card .swagcontainer:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+  text-decoration: none;
+
+}
+.social-card .swagcontainer img:hover {
+  transform: none;
+}
+
+.social-card .swagcontainer .swagtext {
+  padding-left: 6px;
+  display: inline;
+  line-height: 1.5;
+}
 
 .card-content {
   display: flex;

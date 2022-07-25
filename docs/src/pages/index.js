@@ -12,7 +12,9 @@ import styles from './styles.module.css';
 import {
   HomepageCard as Card,
   HomepageSection as Section,
-  ProductCard as ProductCard
+  ProductCard,
+  SocialCard, 
+  SwagCard
 } from '../components/HomepageComponents';
 
 
@@ -50,7 +52,7 @@ function HeroBanner() {
 function Products() {
   return (
 <div>
-    <Section title="Deepfence Open Source Projects" id="opensource">
+    <Section title="Deepfence Open Source Projects">
       <ProductCard
         title="Deepfence ThreatMapper"
         description="Hunts for threats in production platforms, and ranks them based on their risk-of-exploit."
@@ -92,7 +94,7 @@ function Products() {
         docs="/flowmeter"
       />
     </Section>
-    <Section title="Deepfence Enterprise Products" id="enterprise" className="two-cols">
+    <Section title="Deepfence Enterprise Products" className="two-cols">
       <ProductCard
         title="Deepfence ThreatStryker"
         description="Observe, correlate, learn, and act to protect your cloud-native applications, across clouds and on-prem locations.  Built on ThreatMapper, ThreatStryker adds runtime telemetry, attack storyboarding, and targetted protection."
@@ -115,9 +117,18 @@ function Products() {
 function Community() {
   return (
     <div>
-<h1>Participate in the Community​</h1>
+<h1>Participate in the Deepfence Community​</h1>
 
-slack link, perhaps using slackin?
+<Section HeadingTag="h3" className="two-cols">
+
+  <SocialCard />
+  <SwagCard />
+
+</Section>
+
+
+
+
 <h1>Learn More​</h1>
 
 YouTube
@@ -125,15 +136,6 @@ Blog
 Webinars?
 
 
-    </div>
-  );
-}
-
-function Swag() {
-  return (
-    <div>
-      <h1>Support Deepfence</h1>
-      <img src="/img/swag.jpg" width="50%" />
     </div>
   );
 }
@@ -148,7 +150,6 @@ export default function HomePage() {
         <div className={styles.maincontent}>
           <Products />
           <Community />
-          <Swag />
         </div>
       </main>
     </Layout>
